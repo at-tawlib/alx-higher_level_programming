@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
     """returns the weighted average a tuple"""
-    if len(my_list) == 0 and my_list:
+    if len(my_list) == 0 and not my_list:
         return 0
     dividend = 0
     divisor = 0
