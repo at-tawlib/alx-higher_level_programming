@@ -69,7 +69,7 @@ class Square:
         Returns:
             position of squar in 2D
         """
-        return __position
+        return self.__position
 
     @position.setter
     def position(self, value):
