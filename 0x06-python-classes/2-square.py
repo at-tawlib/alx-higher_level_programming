@@ -6,6 +6,10 @@ class Square:
     """Represents a square
     Attributes:
             __size (int): size of a side of the square
+    Raises:
+        TypeError: if size is not an integer
+        ValueError: if size < 0
+    Return: None
     """
 
     def __init__(self, size=0):
