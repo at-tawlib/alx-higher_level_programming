@@ -15,8 +15,8 @@ class Square:
             position: coordinates of square
         Return: None
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def __str__(self):
         self.my_print()
