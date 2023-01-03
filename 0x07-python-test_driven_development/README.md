@@ -130,3 +130,5 @@ max_integer = __import__('6-max_integer').max_integer
 class TestMaxInteger(unittest.TestCase):
 guillaume@ubuntu:~/0x07$ 
 ```
+
+> Written with [StackEdit](https://stackedit.io/).
