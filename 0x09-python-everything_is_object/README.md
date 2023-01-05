@@ -323,9 +323,9 @@ Assuming we are using a CPython implementation of Python3 with default options/c
 
 Hint:  `NSMALLPOSINTS`,  `NSMALLNEGINTS`
 
-## [106-line1.txt](106-line1.txt), [106-line2.txt](106-line2.txt), [106-line3.txt](106-line3.txt), [106-line6.txt](104-line6.txt), [106-line5.txt](106-line6.txt)
+## [106-line1.txt](106-line1.txt), [106-line2.txt](106-line2.txt), [106-line3.txt](106-line3.txt), [106-line4.txt](104-line4.txt), [106-line5.txt](106-line5.txt)
 ```
-guillaume@ubuntu:/python3$ cat string.py 
+guillaume@ubuntu:/python3$ cat string.py :
 a = "SCHL"
 b = "SCHL"
 del a
