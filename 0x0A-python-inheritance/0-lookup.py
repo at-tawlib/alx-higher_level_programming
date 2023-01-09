@@ -8,4 +8,4 @@ def lookup(obj):
     Args:
         obj (object): object to check    
     """
-    print(dir(obj));
+    return dir(obj)
