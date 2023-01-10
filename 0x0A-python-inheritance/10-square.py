@@ -22,4 +22,4 @@ class Square(Rectangle):
         Return:
             the area
         """
-        return self.__size ** 2 
+        return self.__size ** 2
