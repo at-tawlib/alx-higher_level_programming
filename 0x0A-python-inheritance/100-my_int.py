@@ -3,8 +3,11 @@
 MyInt a rebel class
 """
 
+
 class MyInt(int):
-    """MyInt inherits from int but inverses the equal and not equal functions"""
+    """
+    MyInt inherits from int but inverses the equal and not equal functions
+    """
 
     def __eq__(self, value):
         """invert this to be not equal to"""
