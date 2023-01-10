@@ -2,7 +2,7 @@
 """ read file """
 
 
-def read_file(filename=""):
+def read_file(filename="", encoding='utf8'):
     """reads a text file and prints it to stdout
     Args:
         filename (strin): name of file
