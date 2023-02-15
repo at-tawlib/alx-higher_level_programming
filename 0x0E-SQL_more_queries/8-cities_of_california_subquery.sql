@@ -3,4 +3,4 @@
 -- Results must be sorted in ascending order by cities.id
 SELECT * FROM cities 
 	WHERE state_id = 
-	(SELECT id FROM cities WHERE name = "California");
+	(SELECT id FROM cities WHERE name = "California") ORDER BY id ASC;
