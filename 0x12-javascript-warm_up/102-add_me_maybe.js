@@ -5,7 +5,7 @@
  * increments and calls a function.
  */
 exports.addMeMaybe = function (number, theFunction) {
-  if (typeof theFunction == 'function') {
+  if (typeof theFunction === 'function') {
     theFunction.call(this, number + 1);
   }
 };
