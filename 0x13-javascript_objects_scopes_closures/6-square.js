@@ -9,8 +9,7 @@ const Square1 = require('./5-square.js');
  */
 class Square extends Square1 {
   constructor (size) {
-    super();
-    this.size = size;
+    super(size, size);
   }
 
   charPrint (c) {
