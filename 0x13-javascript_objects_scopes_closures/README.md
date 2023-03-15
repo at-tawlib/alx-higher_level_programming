@@ -104,5 +104,59 @@ XXXXXXXX
 XXXXXXXX
 guillaume@ubuntu:~/0x13$ 
 ```
+## [6-square.js](6-square.js) , [6-main.js](6-main.js)
+class  `Square`  that defines a square and inherits from  `Square`  of  [5-square.js](5-square.js):
+-   Create an instance method called  `charPrint(c)`  that prints the rectangle using the character  `c`
+    -   If  `c`  is  `undefined`, use the character  `X`
+```
+guillaume@ubuntu:~/0x13$ ./6-main.js
+XXXX
+XXXX
+XXXX
+XXXX
+CCCC
+CCCC
+CCCC
+CCCC
+guillaume@ubuntu:~/0x13$ 
+```
+## [7-occurrences.js](7-occurrences.js) , [7-main.js](7-main.js)
+has a function that returns the number of occurrences in a list:
+```
+guillaume@ubuntu:~/0x13$ ./7-main.js
+1
+4
+2
+guillaume@ubuntu:~/0x13$ 
+```
+## [8-esrever.js](8-esrever.js) , [8-main.js](8-main.js)
+a function that returns the reversed version of a list:
+```
+guillaume@ubuntu:~/0x13$ ./8-main.js
+[ 5, 4, 3, 2, 1 ]
+[ 'String', { id: 12 }, 89, 'School' ]
+guillaume@ubuntu:~/0x13$ 
+```
+## [9-logme.js](9-logme.js) , [9-main.js](9-main.js)
+has a function that prints the number of arguments already printed and the new argument value. (see example below)
+```
+guillaume@ubuntu:~/0x13$ ./9-main.js
+0: Hello
+1: Best
+2: School
+guillaume@ubuntu:~/0x13$ 
+```
+## [10-converter.js](10-converter.js) , [10-main.js](10-main.js)
+function that converts a number from base 10 to another base passed as argument:
+```
+guillaume@ubuntu:~/0x13$ ./10-main.js
+2
+12
+89
+2
+c
+59
+guillaume@ubuntu:~/0x13$ 
+```
 
-
+> Written with [StackEdit](https://stackedit.io/).
