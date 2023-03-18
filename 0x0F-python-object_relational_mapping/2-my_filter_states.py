@@ -20,8 +20,8 @@ if __name__ == '__main__':
 
     connection = MySQLdb.connect(host, user, password, database_name, port)
     cursor = connection.cursor()
-    cursor.execute("""SELECT * FROM states WHERE name = %s
-            ORDER BY id;""", (name, ))
+    cursor.execute("SELECT * FROM states WHERE name='{}' \
+                   ORDER BY id".format(name))
     rows = cursor.fetchall()
     connection.close()
 
