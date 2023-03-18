@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     for row in rows:
         if row == rows[-1]:
-            print(row[0], end=" ")
+            print(row[0], end="")
         else:
             print(row[0], end=", ")
     print()
