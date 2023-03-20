@@ -201,7 +201,7 @@ guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 6: Louisiana
 guillaume@ubuntu:~/0x0F$ 
 ```
-## [12-model_state_update_id_2.py(12-model_state_update_id_2.py)
+## [12-model_state_update_id_2.py](12-model_state_update_id_2.py)
 script that changes the name of a  `State`  object from the database  `hbtn_0e_6_usa`
 -   script  takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
 -   script should connect to a MySQL server running on  `localhost`  at port  `3306`
