@@ -113,3 +113,151 @@ guillaume@ubuntu:~/0x0F$ ./5-filter_cities.py root root hbtn_0e_4_usa Hawaii
 
 guillaume@ubuntu:~/0x0F$  
 ```
+
+## [model_state.py](model_state.py), [6-model_state.sql](6-model_state.sql), [6-model_state.py](6-model_state.py)
+`model_state.py` contains the class definition of a  `State`  and an instance  `Base = declarative_base()`:
+-   Your script should connect to a MySQL server running on  `localhost`  at port  `3306`
+-   **WARNING:**  all classes who inherit from  `Base`  **must**  be imported before calling  `Base.metadata.create_all(engine)`
+```
+guillaume@ubuntu:~/0x0F$ cat 6-model_state.sql | mysql -uroot -p
+Enter password: 
+ERROR 1146 (42S02) at line 4: Table 'hbtn_0e_6_usa.states' doesn't exist
+guillaume@ubuntu:~/0x0F$ ./6-model_state.py root root hbtn_0e_6_usa
+guillaume@ubuntu:~/0x0F$ cat 6-model_state.sql | mysql -uroot -p
+Enter password: 
+Table   Create Table
+states  CREATE TABLE `states` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `name` varchar(128) NOT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=InnoDB DEFAULT CHARSET=latin1
+guillaume@ubuntu:~/0x0F$ 
+```
+
+## [7-model_state_fetch_all.py](7-model_state_fetch_all.py) , [7-model_state_fetch_all.sql](7-model_state_fetch_all.sql)
+script that lists all  `State`  objects from the database  `hbtn_0e_6_usa`
+-   script takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name` using the module  `SQLAlchemy`
+-   script connects to a MySQL server running on  `localhost`  at port  `3306`
+-   Results sorted in ascending order by  `states.id`
+```
+guillaume@ubuntu:~/0x0F$ cat 7-model_state_fetch_all.sql | mysql -uroot -p hbtn_0e_6_usa
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
+1: California
+2: Arizona
+3: Texas
+4: New York
+5: Nevada
+guillaume@ubuntu:~/0x0F$ 
+```
+## [8-model_state_fetch_first.py](8-model_state_fetch_first.py)
+script that prints the first  `State`  object from the database  `hbtn_0e_6_usa`
+-   script takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
+-   script connects to a MySQL server running on  `localhost`  at port  `3306`
+-   The state you display must be the first in  `states.id`
+-   If the table  `states`  is empty, print  `Nothing`  followed by a new line
+```
+guillaume@ubuntu:~/0x0F$ ./8-model_state_fetch_first.py root root hbtn_0e_6_usa
+1: California
+guillaume@ubuntu:~/0x0F$ 
+```
+## [9-model_state_filter_a.py](9-model_state_filter_a.py)
+script that lists all  `State`  objects that contain the letter  `a`  from the database  `hbtn_0e_6_usa`
+-   script takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
+-   Your script should connect to a MySQL server running on  `localhost`  at port  `3306`
+-   Results sorted in ascending order by  `states.id`
+```
+guillaume@ubuntu:~/0x0F$ ./9-model_state_filter_a.py root root hbtn_0e_6_usa
+1: California
+2: Arizona
+3: Texas
+5: Nevada
+guillaume@ubuntu:~/0x0F$ 
+```
+## [10-model_state_my_get.py](10-model_state_my_get.py)
+script that prints the  `State`  object with the  `name`  passed as argument from the database  `hbtn_0e_6_usa`
+-  script  takes 4 arguments:  `mysql username`,  `mysql password`,  `database name`  and  `state name to search`  (SQL injection free)
+-   script connects to a MySQL server running on  `localhost`  at port  `3306`
+-   assume you have one record with the state name to search
+-   Results must display the  `states.id`
+-   If no state has the name you searched for, display  `Not found`
+```
+guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Texas
+3
+guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Illinois
+Not found
+guillaume@ubuntu:~/0x0F$ 
+```
+## [11-model_state_insert.py](11-model_state_insert.py)
+script that adds the  `State`  object “Louisiana” to the database  `hbtn_0e_6_usa`
+-   script takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
+-   script should connect to a MySQL server running on  `localhost`  at port  `3306`
+-   Print the new  `states.id`  after creation
+```
+guillaume@ubuntu:~/0x0F$ ./11-model_state_insert.py root root hbtn_0e_6_usa 
+6
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
+1: California
+2: Arizona
+3: Texas
+4: New York
+5: Nevada
+6: Louisiana
+guillaume@ubuntu:~/0x0F$ 
+```
+## [12-model_state_update_id_2.py(12-model_state_update_id_2.py)
+script that changes the name of a  `State`  object from the database  `hbtn_0e_6_usa`
+-   script  takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
+-   script should connect to a MySQL server running on  `localhost`  at port  `3306`
+-   Change the name of the  `State`  where  `id = 2`  to  `New Mexico`
+```
+guillaume@ubuntu:~/0x0F$ ./12-model_state_update_id_2.py root root hbtn_0e_6_usa 
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
+1: California
+2: New Mexico
+3: Texas
+4: New York
+5: Nevada
+6: Louisiana
+guillaume@ubuntu:~/0x0F$ 
+```
+## [13-model_state_delete_a.py](13-model_state_delete_a.py)
+script that deletes all  `State`  objects with a name containing the letter  `a`  from the database  `hbtn_0e_6_usa`
+-   script  takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
+-   script connects to a MySQL server running on  `localhost`  at port  `3306`
+```
+guillaume@ubuntu:~/0x0F$ ./13-model_state_delete_a.py root root hbtn_0e_6_usa 
+guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa 
+2: New Mexico
+4: New York
+guillaume@ubuntu:~/0x0F$ 
+```
+## [model_city.py](model_city.py) 
+file similar to  [model_state.py](model_state.py)  named  `model_city.py`  that contains the class definition of a  `City`.
+-   `City`  class:
+    -   inherits from  `Base`  (imported from  `model_state`)
+    -   links to the MySQL table  `cities`
+   
+##  [14-model_city_fetch_by_state.py](14-model_city_fetch_by_state.py), [14-model_city_fetch_by_state.sql](14-model_city_fetch_by_state.sql)
+prints all  `City`  objects from the database  `hbtn_0e_14_usa`:
+-   script takes 3 arguments:  `mysql username`,  `mysql password`  and  `database name`
+-  script should connect to a MySQL server running on  `localhost`  at port  `3306`
+-   Results sorted in ascending order by  `cities.id`
+```
+guillaume@ubuntu:~/0x0F$ cat 14-model_city_fetch_by_state.sql | mysql -uroot -p
+Enter password: 
+guillaume@ubuntu:~/0x0F$ ./14-model_city_fetch_by_state.py root root hbtn_0e_14_usa
+California: (1) San Francisco
+California: (2) San Jose
+California: (3) Los Angeles
+California: (4) Fremont
+California: (5) Livermore
+Arizona: (6) Page
+Arizona: (7) Phoenix
+Texas: (8) Dallas
+Texas: (9) Houston
+Texas: (10) Austin
+New York: (11) New York
+Nevada: (12) Las Vegas
+Nevada: (13) Reno
+Nevada: (14) Henderson
+Nevada: (15) Carson City
+guillaume@ubuntu:~/0x0F$ 
+```
+> Written with [StackEdit](https://stackedit.io/).
