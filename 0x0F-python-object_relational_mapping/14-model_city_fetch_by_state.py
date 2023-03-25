@@ -11,7 +11,8 @@ from model_state import State, Base
 
 if __name__ == "__main__":
     """
-    script should take 3 arguments: mysql username, mysql password and database name
+    script should take 3 arguments: mysql username, mysql
+    password and database name
     script should connect to a MySQL server running on localhost at port 3306
     Results must be sorted in ascending order by cities.id
     """
@@ -27,4 +28,3 @@ if __name__ == "__main__":
 
     session.commit()
     session.close()
-
