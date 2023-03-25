@@ -15,7 +15,7 @@ if __name__ == '__main__':
     mysql password and database name
     script connects to a MySQL server running on localhost at port 3306
     must use only one query to the database
-    must use the state relationship to access to 
+    must use the state relationship to access to
         the State object linked to the City object
     Results must be sorted in ascending order by cities.id
     """
