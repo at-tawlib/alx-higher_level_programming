@@ -10,6 +10,6 @@ import sys
 
 if __name__ == "__main__":
 
-    header = {'email': sys.argv[2]}
-    req = requests.get(sys.argv[1], headers=header)
-    body = content.decode('utf-8')
+    data = {'email': sys.argv[2]}
+    req = requests.post(sys.argv[1], data=data)
+    body = req.content.decode('utf-8')
