@@ -1,5 +1,5 @@
 # 0x11. Python - Network #1
-### `Python`  `Scripting`   `Back-end`  `API`
+### `Python` - `Scripting` - `Back-end` - `API`
 
 ## [0-hbtn_status.py](0-hbtn_status.py)
 script that fetches  `https://alx-intranet.hbtn.io/status`  using `urllib` package
