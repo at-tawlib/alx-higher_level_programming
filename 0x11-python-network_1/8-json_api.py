@@ -9,7 +9,7 @@ import sys
 
 if __name__ == "__main__":
 
-    if len(sys.argv) == 0:
+    if len(sys.argv) == 1:
         q = ""
     else:
         q = sys.argv[1]
@@ -19,6 +19,6 @@ if __name__ == "__main__":
         if json_data == {}:
             print("No result")
         else:
-            print("[{}] {}".format(json_data.get("1"), json_data.get("name"))
+            print("[{}] {}".format(json_data.get("id"), json_data.get("name")))
     except ValueError:
         print("Not a valid JSON")
