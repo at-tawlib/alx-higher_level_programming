@@ -1,4 +1,4 @@
-// adds a class  to the  `<header>`  element when the user clicks on the tag  `DIV#red_header`
+// toggles the class of the  `<header>`  element when the user clicks on the tag  `DIV#toggle_header`
 $("DIV#toggle_header").click(function() {
 	const headerClass = $("header").attr("class");
 	if (headerClass == "red") {
